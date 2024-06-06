@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>QR Code Generator</title>
   <link rel="stylesheet" href="./main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-          integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./main.js" defer></script>
 </head>
 <body>
@@ -15,20 +15,21 @@
     <p>Enter text or URL</p>
     <input type="text" placeholder="www.google.com">
     <div class="version error-correction">
-      <select name="QR code version" class="version">
-        <option value="v1">Version 1 (21x21)</option>
-        <option value="v1">Version 10 (57x57)</option>
-        <option value="v1">Version 20 (97x97)</option>
-        <option value="v1">Version 30 (137x137)</option>
-        <option value="v1">Version 40 (177x177)</option>
+      <select name="Feedback">
+        <optgroup label="How did you feel?">
+          <option value="good">😊</option>
+          <option value="okay">👌</option>
+          <option value="bad">😥</option>
+        </optgroup>
       </select>
-      <select name="Error-correction level" class="version">
+      <select name="Error-correction level" id="error-correction">
         <option value="L">Low(7%)</option>
         <option value="M">Middle(15%)</option>
         <option value="Q">Quartile(25%)</option>
         <option value="H">High(30%)</option>
       </select>
     </div>
+    <div id="qrcode"></div>
     <button>Generate QR Code</button>
   </div> 
 </body>
